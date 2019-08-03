@@ -62,8 +62,8 @@ $ npm run test:cov
 
 #dbaccess
 for my local enviropment
-- usuario - harysvizcaino
-- password - admin01
+- usuario - root
+- password - toor
 
 ## Support
 
