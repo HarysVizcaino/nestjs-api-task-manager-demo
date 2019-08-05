@@ -79,3 +79,51 @@ Nest is an MIT-licensed open source project. It can grow thanks to the sponsors 
 
   Nest is [MIT licensed](LICENSE).
 
+
+
+IMPORTANT: bcryptjs NPM package
+IMPORTANT!
+
+Throughout the course we used the "bcrypt" NPM package.
+
+However, it is necessary to instead use the "bcryptjs" NPM package. Otherwise, there will be issues when installing dependencies on production.
+
+
+
+Steps to fix the issue:
+
+1. Uninstall bcrypt:
+
+yarn remove bcrypt or npm uninstall bcrypt
+
+2. Install bcryptjs:
+
+yarn add bcryptjs or npm install bcryptjs --save
+
+3. Modify the import statements in:
+
+src/auth/user.entity.ts
+
+src/auth/user.repository.ts
+
+
+
+Before:
+
+import * as bcrypt from 'bcrypt';
+
+After:
+
+import * as bcrypt from 'bcryptjs';
+
+
+
+The library works exactly the same, so no further changes are required.
+
+
+
+
+BEFORE GO TO PRODUCTION:
+How?
+
+yarn prestart:prod or npm run prestart:prod
